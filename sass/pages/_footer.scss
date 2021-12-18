@@ -1,0 +1,74 @@
+@use '../helpers/fontFamily' as ff;
+@use '../helpers/variables' as v;
+@use '../helpers/mixins' as m;
+
+.footer {
+  background-color: v.$footer;
+  overflow: hidden;
+
+  &__container {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+
+    @include m.large {
+      padding: 50px 0;
+    }
+  }
+
+  &--head {
+    margin: 0 auto 50px auto;
+    color: v.$dark-desaturated-cyan;
+    font-family: ff.$barlow;
+    letter-spacing: 2px;
+    font-size: 1.8rem;
+    cursor: pointer;
+
+    &:hover {
+      color: v.$white;
+    }
+  }
+
+  &--link {
+    margin: 0 auto 100px auto;
+    width: 400px;
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+      li {
+        display: inline-block;
+        a {
+          font-family: ff.$barlow;
+          font-weight: 600;
+          color: v.$dark-desaturated-cyan;
+
+          &:hover {
+            color: v.$white;
+          }
+        }
+      }
+    }
+  }
+
+  &--social {
+    width: 200px;
+    margin: auto;
+    ul {
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        a {
+          svg {
+            path {
+              &:hover {
+                fill: v.$white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

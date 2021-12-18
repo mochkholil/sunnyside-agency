@@ -1,0 +1,85 @@
+@use '../helpers/fontFamily' as ff;
+@use '../helpers/variables' as v;
+@use '../helpers/mixins' as m;
+
+.header {
+  font-family: ff.$barlow;
+  background-image: url(/public/images/desktop/image-header.jpg);
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+
+  @include m.ipad {
+    height: 600px;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem;
+
+    &__logo {
+      margin-right: auto;
+      width: 8rem;
+    }
+
+    &__toggle {
+      display: none;
+    }
+
+    &__item {
+      display: inline-block;
+      margin-left: 1.5rem;
+    }
+
+    &__link {
+      text-transform: capitalize;
+      color: v.$white;
+    }
+
+    .active {
+      background-color: v.$white;
+      padding: 15px 30px;
+      border-radius: 1.7rem;
+      color: black;
+      font-weight: 700;
+      font-size: 0.8rem;
+      font-family: ff.$fraunces;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: rgb(151, 215, 244);
+        color: v.$white;
+      }
+    }
+  }
+
+  .home {
+    max-width: 100vw;
+    text-align: center;
+    color: v.$white;
+    font-family: ff.$fraunces;
+    margin-top: 1.5rem;
+
+    &--heading {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+      font-weight: 600;
+      margin-bottom: 4rem;
+
+      @include m.ipad {
+        font-size: 2rem;
+      }
+    }
+
+    img {
+      width: 2rem;
+
+      @include m.ipad {
+        width: 1.5rem;
+      }
+    }
+  }
+}

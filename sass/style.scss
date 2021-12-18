@@ -1,0 +1,264 @@
+// Import Index
+@use '../sass/index' as *;
+@use '../sass/helpers/mixins' as m;
+@use '../sass/helpers/variables' as v;
+
+// mobile screen
+@include m.mobile {
+  /*------- 
+     home
+  ------ */
+  .header {
+    background-image: url(/public/images/mobile/image-header.jpg);
+    height: 27.7rem;
+    position: relative;
+    .nav {
+      padding: 2rem;
+
+      &__logo {
+        width: 7rem;
+      }
+
+      &__toggle {
+        display: block;
+      }
+
+      &__menu {
+        position: absolute;
+        top: 100px;
+        padding-top: 20px;
+        left: 35px;
+        height: 15rem;
+        z-index: 2;
+        width: 17rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: v.$white;
+        text-align: center;
+        display: none;
+      }
+
+      .show {
+        display: block;
+      }
+
+      &__item {
+        display: block;
+        line-height: 3rem;
+        margin-left: 0;
+      }
+
+      &__link {
+        color: black;
+        font-weight: 600;
+        color: v.$very-dark-grayish-blue;
+      }
+
+      .active {
+        background-color: v.$yellow;
+      }
+    }
+    .home {
+      &--heading {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      img {
+        width: 2rem;
+      }
+    }
+  }
+  /*---------- 
+     home end
+  --------- */
+  /*------- 
+     about
+  --------- */
+  .about {
+    display: grid;
+    grid-template-areas:
+      'egg'
+      'desc-1'
+      'bottle'
+      'desc-2'
+      'graphic'
+      'photography';
+    grid-template-columns: 1fr;
+
+    .box--1 {
+      grid-area: desc-1;
+      padding: 0 1rem;
+      text-align: center;
+      height: 21rem;
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      button {
+        margin: 2rem auto 0 auto;
+      }
+    }
+    .box--2 {
+      grid-area: egg;
+      background-image: url(/public/images/mobile/image-transform.jpg);
+      height: 20rem;
+    }
+    .box--3 {
+      grid-area: bottle;
+      background-image: url(/public/images/mobile/image-stand-out.jpg);
+      height: 20rem;
+    }
+    .box--4 {
+      grid-area: desc-2;
+      padding: 0 1.5rem;
+      text-align: center;
+      height: 21rem;
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        line-height: 1.6;
+      }
+
+      button {
+        margin: 2rem auto 0 auto;
+      }
+    }
+    .box--5 {
+      grid-area: graphic;
+      background-image: url(/public/images/mobile/image-graphic-design.jpg);
+      font-size: 16px;
+      padding: 0 20px;
+      height: 35rem;
+
+      &-desc {
+        transform: translateY(11.1rem);
+
+        p {
+          line-height: 1.6;
+        }
+      }
+    }
+    .box--6 {
+      grid-area: photography;
+      background-image: url(/public/images/mobile/image-photography.jpg);
+      height: 35rem;
+      font-size: 16px;
+      padding: 0 20px;
+
+      &-desc {
+        transform: translateY(11.1rem);
+
+        p {
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+  /*------------ 
+     about end
+  ----------- */
+
+  /*-------------- 
+     testimonial
+  ------------- */
+  .testimonial {
+    margin: auto;
+
+    &__body {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      padding: 10px 25px;
+      .card {
+        padding: 10px 25px;
+      }
+    }
+  }
+  /*------------------ 
+     testimonial end
+  ----------------- */
+
+  /*----------
+     project
+  --------- */
+  .project {
+    height: 19.4rem;
+    background-position: center center;
+    background-size: cover;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  /*-------------- 
+     project end
+  ------------- */
+
+  /*--------- 
+     footer 
+  -------- */
+  .footer {
+    &--link {
+      width: 100%;
+    }
+  }
+  /*------------- 
+     footer end
+  ------------ */
+
+  /*------------- 
+     attribution
+  ------------ */
+
+  .attribution {
+    font-size: 0.8rem;
+  }
+  /*----------------- 
+     attribution end
+  ---------------- */
+}
+
+// large screen
+@include m.large {
+  .header {
+    .nav {
+      &__logo {
+        width: 10rem;
+      }
+    }
+    .home {
+      margin-top: 5rem;
+      &--heading {
+        font-size: 3.5rem;
+        margin-bottom: 7rem;
+      }
+    }
+  }
+
+  .footer {
+    &--head {
+      font-size: 2rem;
+    }
+    &--link {
+      margin: 0 auto 15.5rem auto;
+    }
+  }
+}
+
+// ipad screen
+
+@include m.ipad {
+  .testimonial {
+    margin: 0 auto 50px auto;
+
+    &__body {
+      display: flex;
+      flex-wrap: wrap;
+      // padding: 0 10rem;
+    }
+  }
+}

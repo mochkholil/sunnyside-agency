@@ -1,0 +1,30 @@
+@mixin flexBox($justifyC, $alignI, $direction) {
+  display: flex;
+  justify-content: $justifyC;
+  align-items: $alignI;
+  flex-direction: $direction;
+}
+
+@mixin backgroundCenter {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin large {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+
+@mixin ipad {
+  @media (max-width: 768px) {
+    @content;
+  }
+}

@@ -1,0 +1,58 @@
+@use '../helpers/fontFamily' as ff;
+@use '../helpers/mixins' as m;
+@use '../helpers/variables' as v;
+
+.testimonial {
+  margin: 150px auto;
+
+  &__head {
+    text-align: center;
+    margin: 100px 0;
+    color: v.$grayish-blue;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    justify-content: center;
+    align-items: start;
+    column-gap: 50px;
+
+    .card {
+      @include m.flexBox(center, center, column);
+      text-align: center;
+
+      &--image {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 50px;
+      }
+      &--text {
+        margin-bottom: 50px;
+
+        p {
+          font-weight: 600;
+          color: v.$very-dark-grayish-blue;
+          line-height: 1.6;
+        }
+      }
+
+      &--stats {
+        margin-bottom: 50px;
+
+        h3 {
+          margin-bottom: 20px;
+        }
+
+        p {
+          color: v.$grayish-blue;
+        }
+      }
+    }
+  }
+}
