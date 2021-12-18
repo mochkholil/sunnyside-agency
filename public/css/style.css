@@ -59,7 +59,7 @@ p {
 
 .header {
   font-family: "Barlow", sans-serif;
-  background-image: url(/public/images/desktop/image-header.jpg);
+  background-image: url("/public/images/desktop/image-header.jpg");
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -212,7 +212,7 @@ p {
 }
 
 .box--2 {
-  background-image: url("../public/images/desktop/image-transform.jpg");
+  background-image: url("/public/images/desktop/image-transform.jpg");
 }
 
 .box--3 {
