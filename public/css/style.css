@@ -212,7 +212,7 @@ p {
 }
 
 .box--2 {
-  background-image: url(/public/images/desktop/image-transform.jpg);
+  background-image: url(/../public/images/desktop/image-transform.jpg);
 }
 
 .box--3 {
